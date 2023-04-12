@@ -12,5 +12,4 @@ public class LinkedListTest {
 		System.out.println("Elements in the list: " + linkedList);
 	}
 }
- 
 	
