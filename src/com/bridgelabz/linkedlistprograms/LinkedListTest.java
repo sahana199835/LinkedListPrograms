@@ -1,6 +1,5 @@
 package com.bridgelabz.linkedlistprograms;
 
-
 class Node {
 	int data;
 	Node next;
@@ -14,23 +13,18 @@ class LinkedList {
 	public LinkedList() {
 		this.head = null;
 	}
-
 	public void append(int data) {
-		Node new_node = new Node(data);
 		Node node1 = new Node(data);
 		if (head == null) {
-			head = new_node;
 			head = node1;
 		} else {
 			Node current = head;
 			while (current.next != null) {
 				current = current.next;
 			}
-			current.next = new_node;
 			current.next = node1;
 		}
 	}
-
 	public void insert(int data, int afterData) {
 		Node node1 = new Node(data);
 		if (head == null) {
@@ -48,20 +42,38 @@ class LinkedList {
 			}
 		}
 	}
+	public void printList() {
+		Node current = head;
+		while (current != null) {
+			System.out.print(current.data + "->");
+			current = current.next;
+		}
+		System.out.println("null");
+	}
 
- public class LinkedListDemo {
-	public static void main(String[] args) {
-		LinkedList myList = new LinkedList();
-		myList.append(56);
-		myList.append(30);
+	public void pop() {
+		if (head == null) {
+			System.out.println("Linked list is empty.");
+		} else {
+			head = head.next;
+		}
+	}
+}
+
+public class LinkedListTest {
+public static void main(String[] args) {
+		LinkedList myList = null;
 		myList.append(70);
 
 		myList.insert(30, 56);
 
 		myList.printList(); // prints: 56->30->70->null
+		myList.pop();
+		myList.printList();
 	}
 }
 
+		
 
 	
 
@@ -69,7 +81,7 @@ class LinkedList {
 
 	
 	
-}
+
 
 
 
